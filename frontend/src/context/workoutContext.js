@@ -33,7 +33,7 @@
 // Above is the seletal for all
 
 
-import {createContext} from 'react'
+import {createContext, useReducer} from 'react'
 
 export const WorkoutsContext = createContext()
 
@@ -59,7 +59,7 @@ export const WorkoutsContextProvider= ({children}) => {
     })
     
     return (
-        <WorkoutsContext.Provider value={{state,dispatch}}>
+        <WorkoutsContext.Provider value={{...state,dispatch}}>
             {children}
         </WorkoutsContext.Provider>
     )
